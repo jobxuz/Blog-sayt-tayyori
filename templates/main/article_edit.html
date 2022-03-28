@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Blog sahifa  {% endblock title %}
+{% block content %}
+    <div class="ratio ratio-4x3">
+        <div class="container">
+            <h1>Tahrirlash</h1>
+            <form  method="post"  enctype="multipart/form-data">{% csrf_token %}
+                {{ form|crispy }}
+            <button class="btn btn-info ml-2" type="submit">Saqlash</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Blog sahifa  {% endblock title %}
+{% block content %}
+<div class="card" style="width: 40rem; margin: auto; padding: 10px;">
+        {% if article.photo %}
+            <img src="{{ object.photo.url }}" alt="{{object.title}}" >
+        {% endif %}
+            <h1 class="btn btn-light" >{{ object.title }}</h1>
+            <p class="btn btn-light" >Muallif {{article.author | title}} : {{article.date}}</p>
+            <p class="btn-light" >{{object.body}}</p>
+    <p>
+            <a class="btn btn-light" href="{% url 'articles_edit_url' article.pk %}">Tahrirlash</a>
+            <a class="btn btn-light" href="{% url 'article_delete_url' article.pk %}">O'chirish</a>
+            <a class="btn btn-light" href="{% url 'articles_list' %}">Barcha postlar</a>
+    </p>
+</div>
+{% endblock content %}

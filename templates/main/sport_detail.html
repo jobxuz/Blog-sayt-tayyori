@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Blog sahifa  {% endblock title %}
+{% block content %}
+<div class="card" style="width: 40rem; margin: auto; padding: 10px;">
+        {% if blog.photo %}
+            <img src="{{ blog.photo.url }}" alt="{{blog.title}}" >
+        {% endif %}
+            <h1 class="btn btn-light" >{{ blog.title }}</h1>
+            <p class="btn btn-light" >Muallif {{blog.author | title}} : {{blog.date}}</p>
+            <p class="btn-light" >{{blog.body}}</p>
+            <p>
+                <a class="btn btn-light" href="{% url 'categoria_url' %}">Ortga</a>
+            </p>
+
+
+</div>
+{% endblock content %}

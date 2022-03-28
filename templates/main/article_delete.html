@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+        <div class="card" style="width: 45rem; margin: auto; padding: 10px;">
+            <h1>Postni o'chirish</h1>
+            <form  method="post"  >{% csrf_token %}
+                <p>{{article.title}} nomli postni o'chirishni istaysizmi</p>
+            <button class="btn btn-info ml-2" type="submit">Ha</button>
+            </form>
+        </div>
+
+{% endblock content %}

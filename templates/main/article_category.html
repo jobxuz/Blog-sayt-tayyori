@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    {% for art in artcle %}
+        <div class="card" style="width: 45rem; margin: auto; padding: 10px;">
+    <h2 class="card-title"><a  href="#">{{ art.title }}</a></h2>
+{% if art.photo %}
+  <img src="{{ art.photo.url }}" class="card-img-top" alt="{{art.title}}">
+{% endif %}
+  <div class="card-body">
+    <p class="card-text">{{art.summary}}</p>
+    <p>Muallif: {{art.author | title}} - {{art.date}}</p>
+    <a href="{% url 'sport_detail_url' pk=art.id %}" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Kirish {% endblock title %}
+{% block content %}
+<div class="ratio ratio-4x3 row row-cols-1 row-cols-md-1 g-4" style="width: 55rem; margin: auto; padding: 10px;" >
+    <div class="container">
+        <h2>Ro'yhattan o'tish</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button type="submit" class="btn btn-primary" >Yuborish</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
